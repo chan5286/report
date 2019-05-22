@@ -1,0 +1,39 @@
+1.
+setwd("c:/tmp")
+a<-read.csv("cquiz1.csv")
+b<-a$score
+hist(b, col="blue", main="C언어 퀴즈 점수의 분포", sub = "학생수 : 25", xlab = "점수", ylab = "인원수")
+2.
+영화배급사의 인지도가 영화 흥행에 영향을 미치는지를 알아 보는 것이고 인지도와 흥행수는 수치로 치환 되므로 연속형자료 간의 연관성에 대해 검정해 봐야 한다. 따라서 상관분석을 사용해야 한다.
+1)
+> #무의미
+> dtr<-c(29,39,19,23)
+> hm<-c(23,12,19,16)
+> cor.test(dtr,hm, method = "pearson")
+Pearson's product-moment correlation
+data: dtr and hm
+t = -0.82126, df = 2, p-value = 0.4978
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+-0.9869344 0.8870145
+sample estimates:
+cor
+-0.5021809
+ ->cor 값이 -0.5~이므로 상관관계가 무의미하다고 할 수 있다.
+2)
+> #유의미
+> dtr<-c(40,17,23,20)
+> hm<-c(23,12,19,16)
+> cor.test(dtr,hm, method = "pearson")
+Pearson's product-moment correlation
+data: dtr and hm
+t = 3.1275, df = 2, p-value = 0.08883
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+-0.4016128 0.9981572
+sample estimates:
+cor
+0.9111735
+->cor값이 0.9~이므로 상관관계가 유의미하다고 할 수 있다.
+3.
+팀원들과 함께 고른 주제에 대해서 무슨 처리방법을 써야하는지, 어떻게 활동을 할지 같이 고민하고 서로의 생각을 나누는 경험은 새로웠습니다.  이 팀프로젝트를 하면서 R언어에 대해 더 알아보고 배울 수 있었고 팀원들 간의 협력으로 서로 더 친해질 수 있는 계기가 되었습니다. 이후에 있을 다른 협력 프로젝트에서 이번의 경험이 큰 도움이 되리라 생각합니다.
